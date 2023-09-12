@@ -176,6 +176,7 @@ import { DateTime } from "luxon";
 const convocatoriaStore = useConvocatoriaStore();
 let convocatorias = ref([]);
 
+// here
 const { nanoLink } = defineProps(["nanoLink"]);
 onMounted(async () => {
   await convocatoriaStore.listConvocatoriaById(nanoLink);
