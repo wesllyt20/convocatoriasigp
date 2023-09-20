@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[38.5rem] bg-white m-auto px-[0.75rem] py-[1rem] rounded-[20px] grid gap-[1rem] text-center text-dark-blue-500"
+    class="w-[45rem] bg-white m-auto px-[0.75rem] py-[1rem] rounded-[20px] grid gap-[1rem] text-center text-dark-blue-500"
     v-if="convocatorias.length > 0"
   >
     <div class="flex justify-between items-center w-full">
@@ -111,9 +111,9 @@
 
       <li class="flex space-x-2">
         <svg
-          class="mt-[1px]"
-          width="20px"
-          height="20px"
+          class="mt-[-3px]"
+          width="30px"
+          height="30px"
           viewBox="-1.92 -1.92 27.84 27.84"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -139,42 +139,145 @@
           Fecha y Lugar de Postulación:
           <span class="text-igp-dark-500 ml-1">
             Se debe postular hasta el
-            <b>{{ fechaFormateada }}</b> mediante la plataforma de convocatorias
+            <b>31 de Julio del 2023</b>, mediante la plataforma de convocatorias
             del IGP.
           </span>
         </p>
       </li>
       <li class="flex space-x-2">
-        <p>Lugar:<span>texto</span></p>
+        <p>
+          Lugar:<span class="text-igp-dark-500 ml-1"
+            >Mayorazgo, Ate - Lima ...
+          </span>
+        </p>
       </li>
       <li class="flex space-x-2">
-        <p>Dependecia:<span>texto</span></p>
+        <p>
+          Dependecia:<span class="text-igp-dark-500 ml-1"
+            >Ciencia de la tierra solida ...
+          </span>
+        </p>
       </li>
       <li class="flex space-x-2">
-        <p>Bases y cronograma:<span>texto</span></p>
+        <p>
+          Bases y cronograma:
+          <a class="text-igp-dark-500 ml-1"> Archivo PDF... </a>
+        </p>
       </li>
     </ul>
-    <hr />
-    <label class="text-igp-blue text-start text-sm mb-[-5px]">
+    <hr class="mt-[-30px]" />
+    <label class="text-igp-blue text-start text-sm mb-[-5px] mt-[-30px]">
       Documentación complementaria</label
     >
     <ul class="list-none text-start">
       <li>
-        Anexos: <a class="">Anexo2A</a>, <a href="">Anexo2B</a>,
-        <a href="">Anexo3</a>,
-        <a href="">Anexo4</a>
+        Anexos: <a class="text-igp-dark-500 ml-1"> Anexo 2A</a> ,
+        <a class="text-igp-dark-500 ml-1"> Anexo 2B</a> ,
+        <a class="text-igp-dark-500 ml-1"> Anexo 3</a> ,
+        <a class="text-igp-dark-500 ml-1"> Anexo 4</a> ,
+        <a class="text-igp-dark-500 ml-1"> Anexo 5</a>
       </li>
     </ul>
+    <hr class="mt-[-10px]" />
+    <label class="text-igp-blue text-start text-sm mb-[-5px] mt-[-10px]">
+      Proceso de selección:</label
+    >
+    <div class="relative container">
+      <!-- Línea recta de fondo -->
+      <div class="absolute inset-2.5 bg-igp-dark-100 h-1 z-0"></div>
+
+      <!-- Círculo 1 -->
+      <div
+        class="absolute -translate-x-1/5 rounded-full h-6 w-6 bg-igp-semaforo-50"
+      ></div>
+
+      <!-- Círculo 2 -->
+      <div
+        class="absolute left-1/4 translate-x-3 rounded-full h-6 w-6 bg-igp-semaforo-50"
+      ></div>
+
+      <!-- Círculo 3 -->
+      <div
+        class="absolute left-2/4 translate-x-4 rounded-full h-6 w-6 bg-igp-semaforo-50"
+      ></div>
+
+      <!-- Círculo 4 -->
+      <div
+        class="absolute left-3/4 translate-x-6 rounded-full h-6 w-6 bg-igp-semaforo-50"
+      ></div>
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-start text-sm mt-2"
+    >
+      <!-- Primer elemento -->
+      <ul class="pl-3 pt-2">
+        <li class="text-igp-blue"><b>Etapa 1</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500">
+            Evaluación de ficha de postulación
+          </a>
+        </li>
+      </ul>
+
+      <!-- Segundo elemento -->
+      <ul class="pt-2 pl-2">
+        <li class="text-igp-blue"><b>Etapa 2</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500"> Evaluación de conocimientos </a>
+        </li>
+        <li class="text-igp-blue mt-3"><b>Comunicado 1</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500"> (15 de Julio del 2023) </a>
+        </li>
+        <li class="text-igp-blue mt-3"><b>Comunicado 2</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500"> (15 de Julio del 2023) </a>
+        </li>
+      </ul>
+
+      <!-- Tercer elemento -->
+      <ul class="pt-2 pl-2">
+        <li class="text-igp-blue"><b>Etapa 3</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500"> Evaluación Curricular </a>
+        </li>
+      </ul>
+
+      <!-- Cuarto elemento -->
+      <ul class="pt-2 pl-1">
+        <li class="text-igp-blue"><b>Etapa 4</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500">
+            Resultado final de Convocatoria
+          </a>
+        </li>
+        <li class="text-igp-blue mt-3"><b>Comunicado 1</b></li>
+        <li>
+          <a href="" class="text-igp-dark-500"> (28 de Julio del 2023) </a>
+        </li>
+      </ul>
+    </div>
+    <div class="">
+      <btnDefault class="text-sm px-3" @click="postular">
+        Postular ahora</btnDefault
+      >
+    </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted, defineProps, ref } from "vue";
+import btnDefault from "../../components/modals/buttons/btnDefault.vue";
 import { useConvocatoriaStore } from "../../stores/convocatorias";
 import { DateTime } from "luxon";
 
 const convocatoriaStore = useConvocatoriaStore();
 let convocatorias = ref([]);
+const postular = () => {
+  const cerrar = document.getElementById("closeModal");
+  cerrar.click();
+  console.log("postular");
+};
 
 // here
 const { nanoLink } = defineProps(["nanoLink"]);

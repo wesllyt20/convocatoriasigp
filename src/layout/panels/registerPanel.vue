@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[610px] bg-white m-auto px-[3.5rem] py-[2rem] rounded-[20px] grid gap-[2.2rem] text-center text-dark-blue-500"
+    class="w-[610px] bg-white m-auto px-[3.5rem] py-[1rem] rounded-[20px] grid gap-[2rem] text-center text-dark-blue-500"
   >
     <div class="flex mx-auto gap-x-8 mt-4">
       <img class="h-[44px]" src="/public/img/logo_minam.png" alt="Logo MINAM" />
@@ -10,13 +10,28 @@
         alt="Logo Instituto Geofísico del Perú"
       />
     </div>
-    <h1 class="text-[2rem] text-igp-blue">Inicio de sesión</h1>
-    <p class="text-center font-light pb-5">
+    <h1 class="text-[2rem] text-igp-blue">Registro de usuario</h1>
+    <p class="text-center font-light pb-3">
       Bienvenido a
       <b class="font-medium">Convocatorias de trabajo IGP</b>, <br />
       ingrese sus credenciales para acceder a la plataforma.
     </p>
-    <div class="relative h-11 w-full min-w-[200px]">
+    <div class="relative h-11 w-full min-w-[100px]">
+      <input
+        v-model="dni"
+        type="email"
+        placeholder="0000000"
+        class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-dark-blue-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+      />
+      <small id="emailHelp" class="form-text text-muted">{{ dniError }}</small>
+      <label
+        class="after:content[' '] pointer-events-none absolute left-0 -top-2.5 flex h-full w-full select-none font-normal leading-tight text-igp-blue transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-dark-blue-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:font-bold peer-focus:leading-tight peer-focus:text-dark-gray-500 peer-focus:after:scale-x-100 peer-focus:after:border-dark-blue-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+      >
+        DNI o Carnet de extranjeria
+      </label>
+    </div>
+
+    <div class="relative h-11 w-full min-w-[100px]">
       <input
         v-model="email"
         type="email"
@@ -32,7 +47,7 @@
         Correo electrónico
       </label>
     </div>
-    <div class="relative h-11 w-full min-w-[200px]">
+    <div class="relative h-11 w-full min-w-[100px]">
       <input
         type="password"
         v-model="password"
@@ -57,20 +72,7 @@
       </button>
       <small id="authHelp" class="form-text text-muted">{{ authError }}</small>
     </div>
-    <br />
-    <br />
-    <p>
-      <a href="#" class="underline decoration-1 hover:text-dark-blue-300"
-        >¿Olvidaste tu clave?</a
-      ><br />
-      ¿Eres un nuevo usuario?
-      <a
-        href="#"
-        @click="registro"
-        class="underline decoration-1 hover:text-dark-blue-300"
-        >Regístrate aquí</a
-      >
-    </p>
+
     <p class="text-gray-400 text-[.8rem] mt-[1.5rem]">
       Calle Badajoz N° 169 Urb. Mayorazgo IV Etapa - Ate, Lima - Perú <br />
       Central Telefónica: 317-2300 | Escríbenos a:
@@ -94,15 +96,10 @@ const router = useRouter();
 const email = ref("kiley-12@hotmail.com");
 const password = ref("12345678");
 const emailError = ref("");
+const dniError = ref("");
 const passwordError = ref("");
 const authError = ref("");
 const colorAccess = ref("");
-
-const registro = async () => {
-  console.log("aaaa");
-  const registrarse = document.getElementById("btnRegistro");
-  registrarse.click();
-};
 
 const acceso = async () => {
   try {
@@ -110,6 +107,8 @@ const acceso = async () => {
     passwordError.value = "";
     authError.value = "";
     colorAccess.value = "";
+    dniError.value =
+      "Él DNI ingresado fue validado correctamente con la RENIEC.";
 
     const schema = Yup.object().shape({
       email: Yup.string()
@@ -139,9 +138,11 @@ const acceso = async () => {
     );
 
     await userStore.access(email.value, password.value);
-    authError.value = "Acceso concedido.";
+    authError.value =
+      "Se le enviará un mensaje a esa dirección con las instrucciones pertinente";
+    // crear funcion para bloquear controles y arroje este mensaje"
     colorAccess.value = "#048a11";
-    router.push("/datos-personales");
+    router.push("/");
   } catch (error) {
     const impErr = error.error;
     colorAccess.value = "#f7382d";

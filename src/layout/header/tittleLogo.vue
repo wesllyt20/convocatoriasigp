@@ -27,13 +27,11 @@ export default {
 }
 
 #minamlog {
-  width: 180px;
-  height: 50px;
+  height: 40px;
   margin-right: 20px;
 }
 
 #igplog {
-  width: 155px;
-  height: 46px;
+  height: 36px;
 }
 </style>

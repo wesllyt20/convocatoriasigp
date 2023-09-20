@@ -10,5 +10,10 @@ export default defineConfig({
   server: { host: true },
   plugins: [vue()],
   base: publicPath,
-
+  resolve: {
+    alias: {
+      '@components': '/src/components',
+      '@layout': '/src/layout',
+    },
+  },
 });

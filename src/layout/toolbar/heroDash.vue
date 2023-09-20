@@ -12,6 +12,7 @@
             <h3 class="text-3xl">
               Convocatorias de trabajo <label class="font-bold"> IGP</label>
             </h3>
+
             <p>
               El Instituto Geofísico del Perú está en busca de profesionales
               altamente calificados y competitivos que deseen formar parte de

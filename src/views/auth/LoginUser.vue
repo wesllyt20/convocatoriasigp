@@ -63,29 +63,8 @@
         <small id="authHelp" class="form-text text-muted">{{
           authError
         }}</small>
-        <div class="relative py-4">
-          <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-b border-gray-300"></div>
-          </div>
-          <div class="relative flex justify-center">
-            <span class="bg-white px-4 text-sm text-gray-500">o también</span>
-          </div>
-        </div>
-
-        <button
-          class="text-dark-blue-500 border-[1px] border-dark-blue-500 rounded-[15px] h-[54px] w-[385px] text-[18px] hover:bg-dark-blue-500 hover:text-white mx-auto"
-        >
-          <b class="pr-[1.2rem]">G</b>
-          Continuar con Google
-        </button>
       </div>
 
-      <p>
-        ¿Deseas solo ver el estado de tu trámite?
-        <a href="#" class="underline decoration-1 hover:text-dark-blue-300"
-          >Consulta aqui</a
-        >
-      </p>
       <p class="text-gray-400 text-[.8rem] mt-[1.5rem]">
         Calle Badajoz N° 169 Urb. Mayorazgo IV Etapa - Ate, Lima - Perú <br />
         Central Telefónica: 317-2300 | Escríbenos a:
@@ -151,7 +130,7 @@ const acceso = async () => {
     await userStore.access(email.value, password.value);
     authError.value = "Acceso concedido.";
     colorAccess.value = "#048a11";
-    router.push("/login");
+    router.push("/user");
   } catch (error) {
     const impErr = error.error;
     colorAccess.value = "#f7382d";

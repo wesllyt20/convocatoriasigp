@@ -9,14 +9,14 @@
       <div class="mx-3 border-s border-igp-dark-100 h-3" />
       <!-- Divider -->
       <navBarText href="https://www.youtube.com/">Soporte</navBarText>
-      <btnDefault @click="openModal" class="ml-14 text-sm px-5"
-        >Registro</btnDefault
+      <btnDefault id="btnRegistro" @click="openModal" class="ml-14 text-sm px-5"
+        >Ingreso</btnDefault
       >
     </div>
   </nav>
   <div class="absolute">
     <blurmodel :modalOpen="modalOpen" @close-modal="closeModal">
-      <loginPanel></loginPanel>
+      <registerpanel></registerpanel>
     </blurmodel>
   </div>
 </template>
@@ -24,7 +24,7 @@
 <script>
 import navBarText from "../../components/modals/text/navBarText.vue";
 import btnDefault from "../../components/modals/buttons/btnDefault.vue";
-import loginPanel from "../panels/login.vue";
+import registerpanel from "../panels/login.vue";
 import blurmodel from "../../components/modals/blurmodel.vue";
 
 export default {
@@ -32,7 +32,7 @@ export default {
   components: {
     navBarText,
     btnDefault,
-    loginPanel,
+    registerpanel,
     blurmodel,
   },
   data() {
@@ -52,6 +52,6 @@ export default {
 </script>
 <style>
 #totalblur {
-  z-index: 1000;
+  z-index: 10;
 }
 </style>
