@@ -7,20 +7,17 @@
           Convocatorias <b class="font-semibold">IGP</b>
         </h2>
       </div>
-      <userMenu></userMenu>
     </nav>
   </div>
 </template>
 
 <script>
 import tittleLogo from "../header/tittleLogo.vue";
-import userMenu from "../header/userMenu.vue";
 
 export default {
   name: "headerDash",
   components: {
     tittleLogo,
-    userMenu,
   },
 };
 </script>

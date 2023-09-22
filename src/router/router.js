@@ -14,6 +14,7 @@ import cv_Educacion from '../views/User/cv-educacion.vue'
 import cv_Cursos from '../views/User/cv-cursos.vue'
 import cv_Experiencia from '../views/User/cv-experiencia.vue'
 import cv_Conocimientos from '../views/User/cv-conocimientos.vue'
+import widget1 from '../views/widgets/widget1.vue'
 
 
 //
@@ -27,6 +28,7 @@ const routes = [
         component: Dashboard
         //meta: { auth: true }
     },
+    { path: '/para-nicole-by-wesllytcito', component: widget1 },
     { path: '/datos-personales', component: datosPersonales, meta: { auth: true } },
     { path: '/ver-convocatorias', component: verconvocatoria, meta: { auth: true } },
     { path: '/mis-postulaciones', component: misPostulaciones, meta: { auth: true } },

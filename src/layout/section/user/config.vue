@@ -12,9 +12,9 @@
         <CloseSession></CloseSession>
       </div>
     </div>
-    <div
-      class="4xl:col-span-4 3xl:col-span-9 2xl:col-span-8 xl:grid-cols-6"
-    ></div>
+    <div class="4xl:col-span-4 3xl:col-span-9 2xl:col-span-8 xl:col-span-6">
+      <panel class="space-y-4 px-2 pt-3"></panel>
+    </div>
   </div>
 </template>
 
@@ -23,4 +23,5 @@ import CloseSession from "../../menu/user/closeSession.vue";
 import accion from "../../menu/user/confAccion.vue";
 import CvPdf from "../../menu/user/cvPdf.vue";
 import datosUser from "../../menu/user/datosUser.vue";
+import panel from "@layout/panels/user/user.configuracion.panel.vue";
 </script>
