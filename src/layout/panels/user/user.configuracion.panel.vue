@@ -6,17 +6,20 @@
           Configuración de mi cuenta
         </h4>
       </div>
-      <div class="w-full h-full text-start ml-5">
-        <p class="text-igp-dark text-sm">
-          La contraseña actual y el correo electrónico actual
-        </p>
-        <div class="grid grid-cols-12 gap-3 pt-3 space-y-0">
-          <div class="col-span-3">
-            <Frm id="pass" place="Contraseña">Contraseña</Frm>
+      <p class="text-igp-dark text-sm pl-5">
+        La contraseña actual y el correo electrónico actual
+      </p>
+      <div class="pt-2">
+        <div class="grid grid-cols-12 gap-3 px-3 space-y-0">
+          <div class="col-span-4">
+            <Frm id="pass" type="password" place="********">Contraseña</Frm>
           </div>
           <div class="col-span-4">
-            <Frm id="correo" place="Correo electrónico actual">Correo</Frm>
+            <Frm id="correo" type="email" place="Correo electrónico actual"
+              >Correo</Frm
+            >
           </div>
+          <div class="col-span-4"></div>
         </div>
       </div>
       <div class="pt-2">
@@ -30,11 +33,13 @@
           importante establecer una nueva contraseña para mayor seguridad.
         </p>
         <div class="grid grid-cols-12 gap-3 px-3 space-y-0">
-          <div class="col-span-3">
-            <Frm id="newpass" place="Nueva contraseña"> Contraseña</Frm>
+          <div class="col-span-4">
+            <Frm id="newpass" type="password" place="********"
+              >Nueva Contraseña</Frm
+            >
           </div>
-          <div class="col-span-3">
-            <Frm id="renewpass" place="Repita contraseña"
+          <div class="col-span-4">
+            <Frm id="renewpass" type="password" place="********"
               >Repite tu nueva Contraseña</Frm
             >
           </div>
@@ -43,183 +48,64 @@
               Guardar cambios
             </BtnDefault>
           </div>
-          <div class="col-span-3"></div>
-          <div class="col-span-3">
-            <Frm id="ruc" place="RUC"> RUC</Frm>
-          </div>
-          <div class="col-span-1">
-            <Frm id="bandera" place="+51">Prefix</Frm>
-          </div>
-          <div class="col-span-2">
-            <Frm id="celular" place="celular"> Celular</Frm>
-          </div>
-          <div class="col-span-6">
-            <Frm id="email" place="email"> Email</Frm>
-          </div>
-          <div class="col-span-3">
-            <Frm id="fechanac" place="01/01/2000">Fecha de Nacimiento</Frm>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="estadoCivil">
-              <template v-slot:name> Estado civil </template>
-              <option selected>Soltero</option>
-              <option>Casado</option>
-              <option>Divorciado</option>
-            </FrmSel>
-          </div>
         </div>
       </div>
-      <div>
+      <div class="pt-2">
         <span class="pl-4 text-lg font-normal text-igp-blue"
-          >Lugar de nacimiento:</span
+          >Cambiar mi correo electrónico</span
         >
-        <div class="grid grid-cols-12 gap-3 px-3 pt-3 space-y-0">
-          <div class="col-span-3">
-            <FrmSel id="departamentoNac">
-              <template v-slot:name> Departamento </template>
-              <option selected>Lima</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="provinciaNac">
-              <template v-slot:name> Provincia </template>
-              <option selected>Lima</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="distritoNac">
-              <template v-slot:name> Departamento </template>
-              <option selected>Jesus María</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-        </div>
-      </div>
-      <div>
-        <span class="pl-4 text-lg font-normal text-igp-blue"
-          >Lugar de domicilio:</span
-        >
-        <div class="grid grid-cols-12 gap-3 px-3 pt-3 space-y-0">
-          <div class="col-span-3">
-            <FrmSel id="departamentoAct">
-              <template v-slot:name> Departamento </template>
-              <option selected>Lima</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="provinciaAct">
-              <template v-slot:name> Provincia </template>
-              <option selected>Lima</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="distritoAct">
-              <template v-slot:name> Departamento </template>
-              <option selected>Villa María del Triunfo</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="urbanizacionAct">
-              <template v-slot:name> Tipo Urb </template>
-              <option selected>Jirón</option>
-              <option>Calle</option>
-              <option>Avenida</option>
-              <option>Manzana</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-12">
-            <Frm id="direccionAct" place="Dirección actual">
-              Dirección (incluir calle/psj/jiron/urb/mz)</Frm
-            >
-          </div>
-        </div>
-      </div>
-      <div>
-        <span class="pl-4 text-lg font-normal text-igp-blue">Otros:</span>
-        <div class="grid grid-cols-12 gap-3 px-3 pt-3 space-y-0">
-          <div class="col-span-3">
-            <FrmSel id="discapacidad">
-              <template v-slot:name> Persona con discapacidad </template>
-              <option selected>No</option>
-              <option>Si</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="tipoDiscapacidad">
-              <template v-slot:name> Tipo de discapacidad </template>
-              <option selected>[Seleccionar]</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="ffaa">
-              <template v-slot:name> Licencia FF.AA. </template>
-              <option selected>No</option>
-              <option>Si</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-          <div class="col-span-3">
-            <FrmSel id="tipoffaa">
-              <template v-slot:name> Tipo FF.AA. </template>
-              <option selected>[Seleccionar]</option>
-              <option>VMT</option>
-              <option>SURCO</option>
-            </FrmSel>
-          </div>
-        </div>
-      </div>
-      <div>
-        <span class="pl-4 text-lg font-normal text-igp-blue">Fotografía:</span>
-        <div class="grid grid-cols-12 px-3 pt-3">
-          <div class="col-span-12">
-            <div
-              class="flex items-center content-center justify-between p-2 pl-4 border-1 rounded-lg border-gray-300 shadow-sm"
-            >
-              <!-- Botón "Seleccionar archivo" -->
-              <label class="pl-3 text-sm font-medium text-igp-dark">
-                Adjunto archivo:
-                <span class="text-igp-blue ml-5"> {{ archivoInfo }}</span>
-                <span class="ml-5 text-igp-semaforo-500">
-                  {{ archivoPeso }}
-                </span>
-              </label>
-              <label
-                for="fotoDatosP"
-                class="cursor-pointer p-2 px-4 hover:bg-igp-dark-50 border-igp-dark border-1 text-sm rounded-lg bg-igp-white-50"
-                >Selecciona archivo</label
-              >
-              <!-- Input de archivo -->
-              <input
-                type="file"
-                id="fotoDatosP"
-                @change="handleFileChange"
-                accept=".jpg, .jpeg, .png, "
-                class="hidden"
-              />
-            </div>
+        <p class="text-[#856404] text-sm px-8 pt-3 pb-2">
+          <b>Importante:</b>
 
-            <small class="text-igp-blue-500"
-              >EL archivo debe estar en formato jpg, png o gif y no debe pesar
-              mas de 5 Mb.</small
+          Cuando cambies el email, te llegará un correo electrónico para que
+          actives tu cuenta.
+        </p>
+        <div class="grid grid-cols-12 gap-3 px-3 space-y-0">
+          <div class="col-span-4">
+            <Frm id="newCorreo" type="email" place="ejemplo@tudominio.com"
+              >Correo</Frm
             >
           </div>
+          <div class="col-span-4">
+            <Frm id="reNewCorreo" type="email" place="ejemplo@tudominio.com"
+              >Correo</Frm
+            >
+          </div>
+          <div class="col-span-3">
+            <BtnDefault class="px-5 ml-3 mt-2 text-sm">
+              Guardar cambios
+            </BtnDefault>
+          </div>
         </div>
-        <BtnDefault class="px-5 py-3 ml-3 mt-4 text-sm">
-          Guardar cambios</BtnDefault
+      </div>
+      <div class="pt-2">
+        <span class="pl-4 text-lg font-normal text-igp-blue"
+          >Eliminar mi cuenta</span
         >
+        <div class="bg-red-100 flex items-center content-center mb-3 mt-2 ml-4">
+          <p class="text-red-700 text-sm px-3 pt-3">
+            <b>Importante: </b>
+            Si eliminas tu cuenta , no podrás postularte a más convocatorias ni
+            revisar tus postulaciones. Esta acción es irreversible.
+          </p>
+        </div>
+        <div class="grid grid-cols-12 gap-3 px-3 space-y-0">
+          <div class="col-span-4">
+            <Frm id="delContra" type="password" place="********"
+              >Ingresa tu Contraseña</Frm
+            >
+          </div>
+          <div class="col-span-4">
+            <Frm id="renewpass" place="Motivos personales"
+              >¿Por qué quieres eliminar tu cuenta?</Frm
+            >
+          </div>
+          <div class="col-span-3">
+            <BtnDefault class="px-5 ml-3 mt-2 text-sm">
+              Guardar cambios
+            </BtnDefault>
+          </div>
+        </div>
       </div>
     </panel>
   </div>

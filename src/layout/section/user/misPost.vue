@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="4xl:col-span-4 3xl:col-span-9 2xl:col-span-8 xl:col-span-6">
-      <panel></panel>
+      <panel class="space-y-4 px-2 pt-3"></panel>
     </div>
   </div>
 </template>

@@ -7,7 +7,7 @@
       <span class="text-xs font-medium text-gray-700"> <slot></slot> </span>
 
       <input
-        type="email"
+        :type="type"
         :id="id"
         :placeholder="place"
         class="w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
@@ -23,6 +23,9 @@ export default {
       type: String,
     },
     place: {
+      type: String,
+    },
+    type: {
       type: String,
     },
   },
