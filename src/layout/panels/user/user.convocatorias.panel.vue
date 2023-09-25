@@ -152,7 +152,7 @@ import { ref, onMounted, watchEffect } from "vue";
 import axios from "axios";
 
 const filtroProceso = ref("");
-const filtroEstado = ref("");
+const filtroEstado = ref(""); 
 const convocatorias = ref([]);
 const paginaActual = ref(1);
 const totalPaginas = ref(1);
